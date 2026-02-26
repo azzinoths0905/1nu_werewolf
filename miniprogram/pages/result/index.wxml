@@ -1,0 +1,21 @@
+<view class="view-port">
+  <view class="phone-screen">
+    <view class="tag">结算</view>
+    <view class="title">{{winnerText}}</view>
+    <view class="subtitle">{{subtitle}}</view>
+
+    <view class="panel">
+      <view class="section-title">身份揭示（初始 -> 最终）</view>
+      <view class="result-item" wx:for="{{results}}" wx:key="openId">
+        <view>
+          <text>{{item.nickname}}</text>
+          <text class="muted-inline">（{{item.initialRoleText}} -> {{item.finalRoleText}}）</text>
+        </view>
+        <text>{{item.votesReceived}}票</text>
+      </view>
+
+      <button class="btn btn-primary" bindtap="replay">再来一局</button>
+      <button class="btn btn-ghost" bindtap="backLobby">返回大厅改配置</button>
+    </view>
+  </view>
+</view>

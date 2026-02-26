@@ -1,0 +1,33 @@
+@import '../../app.wxss';
+
+.debug-start-label {
+  color: #c8d8ff;
+  font-size: 24rpx;
+}
+
+.debug-bot-row {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  border: 1px solid #314a78;
+  border-radius: 12rpx;
+  background: rgba(7, 12, 24, 0.45);
+  padding: 12rpx 14rpx;
+}
+
+.debug-bot-input {
+  width: 100rpx;
+  border: 1px solid #46639c;
+  border-radius: 10rpx;
+  background: #1a2b4b;
+  color: #dce8ff;
+  padding: 10rpx 12rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.debug-bot-btn {
+  padding: 14rpx 20rpx;
+  font-size: 24rpx;
+  line-height: 1;
+}

@@ -1,0 +1,9 @@
+{
+  "desc": "狼人杀一夜版 sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

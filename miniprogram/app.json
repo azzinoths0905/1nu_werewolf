@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/lobby/index",
+    "pages/night/index",
+    "pages/vote/index",
+    "pages/result/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#101a2f",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "狼人杀一夜版",
+    "backgroundColor": "#070a12",
+    "backgroundTextStyle": "light"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

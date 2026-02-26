@@ -1,0 +1,22 @@
+@import '../../app.wxss';
+
+.debug-panel {
+  margin-bottom: 16rpx;
+}
+
+.debug-actions {
+  display: flex;
+  gap: 12rpx;
+}
+
+.debug-btn {
+  flex: 1;
+  font-size: 24rpx;
+  padding: 16rpx 10rpx;
+}
+
+.debug-tip {
+  color: #a8b8de;
+  font-size: 22rpx;
+  line-height: 1.5;
+}

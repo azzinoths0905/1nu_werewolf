@@ -1,0 +1,30 @@
+<view class="view-port">
+  <view class="phone-screen">
+    <view class="tag">大厅</view>
+    <view class="title">房间 #{{roomCode}}</view>
+    <view class="subtitle">当前 {{playerCount}}/20 人 | 任意玩家可开局</view>
+
+    <view class="panel">
+      <view class="section-title">玩家列表</view>
+      <view class="row-list">{{playerText || '暂无玩家'}}</view>
+
+      <view class="section-title">角色池（本局会按人数自动补齐村民）</view>
+      <view class="chips">
+        <view class="chip" wx:for="{{roles}}" wx:key="*this">{{item}}</view>
+      </view>
+
+      <view class="subtitle">{{statusHint}}</view>
+      <view class="debug-bot-row" wx:if="{{showDebugStartTools}}">
+        <text class="debug-start-label">开发调试：添加机器人</text>
+        <input
+          class="debug-bot-input"
+          type="number"
+          value="{{debugBotCount}}"
+          bindinput="onDebugBotCountInput"
+        />
+        <button class="btn btn-ghost debug-bot-btn" bindtap="addBots">添加</button>
+      </view>
+      <button class="btn btn-primary" bindtap="startGame">开始本局</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<view class="view-port">
+  <view class="phone-screen">
+    <view class="tag">投票阶段</view>
+    <view class="title">请投票你认为的狼人</view>
+    <view class="subtitle">{{statusHint}}</view>
+
+    <view class="panel" wx:if="{{privateNightResult}}">
+      <view class="section-title">你的夜晚信息</view>
+      <view class="row-list">{{privateNightResult}}</view>
+    </view>
+
+    <view class="panel">
+      <view class="timer timer-danger">投票进度 {{submittedCount}} / {{totalCount}}</view>
+      <view class="grid-2">
+        <button
+          class="vote {{selectedTargetOpenId === item.openId ? 'vote-active' : ''}}"
+          wx:for="{{votes}}"
+          wx:key="openId"
+          data-openid="{{item.openId}}"
+          bindtap="chooseVote"
+        >
+          {{item.nickname}}
+        </button>
+      </view>
+      <button class="btn btn-primary" bindtap="submitVote">提交投票</button>
+    </view>
+  </view>
+</view>

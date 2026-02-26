@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>狼人杀一夜版 - Mobile UI</title>
+    <link rel="stylesheet" href="./ui-mockups-mobile.css" />
+  </head>
+  <body>
+    <main class="mobile-board">
+      <section class="phone-screen" id="home">
+        <div class="tag">首页</div>
+        <h1>今晚谁是狼人？</h1>
+        <p>输入昵称，3-20 人线下开玩。</p>
+        <div class="panel">
+          <label>昵称</label>
+          <div class="input">例如：阿哲</div>
+          <button class="btn primary">创建房间</button>
+          <button class="btn ghost">加入房间</button>
+        </div>
+      </section>
+
+      <section class="phone-screen" id="lobby">
+        <div class="tag">大厅</div>
+        <h2>房间 #7K9M</h2>
+        <p>当前 12/20 人 | 任意玩家可开局</p>
+        <div class="panel">
+          <h3>玩家列表</h3>
+          <div class="list">阿哲 · 小泽 · 康康 · Rina · 墨鱼 · ...</div>
+          <h3>角色池</h3>
+          <div class="chips">
+            <span>狼人 x3</span><span>预言家 x1</span><span>强盗 x1</span>
+            <span>捣蛋鬼 x1</span><span>村民 x10</span><span>中心牌 x3</span>
+          </div>
+          <button class="btn primary">开始本局</button>
+        </div>
+      </section>
+
+      <section class="phone-screen" id="night">
+        <div class="tag">夜晚阶段</div>
+        <h2>你的身份：预言家</h2>
+        <p>请选择操作，倒计时结束自动提交。</p>
+        <div class="panel">
+          <div class="timer">剩余 00:28</div>
+          <button class="choice">查看玩家：小泽</button>
+          <button class="choice">查看玩家：康康</button>
+          <button class="choice">查看中心牌 A+B</button>
+          <button class="btn primary">确认行动</button>
+        </div>
+      </section>
+
+      <section class="phone-screen" id="vote">
+        <div class="tag">投票阶段</div>
+        <h2>请投票你认为的狼人</h2>
+        <p>锁票前可改票。</p>
+        <div class="panel">
+          <div class="timer danger">剩余 00:14</div>
+          <div class="grid2">
+            <button class="vote active">阿哲</button><button class="vote">小泽</button>
+            <button class="vote">康康</button><button class="vote">Rina</button>
+          </div>
+          <button class="btn primary">提交投票</button>
+        </div>
+      </section>
+
+      <section class="phone-screen" id="result">
+        <div class="tag">结算</div>
+        <h2>村民阵营胜利</h2>
+        <p>最高票：小泽（5 票）</p>
+        <div class="panel">
+          <h3>身份揭示</h3>
+          <div class="result-item"><strong>阿哲</strong><span>村民</span></div>
+          <div class="result-item"><strong>小泽</strong><span>狼人</span></div>
+          <div class="result-item"><strong>康康</strong><span>强盗</span></div>
+          <button class="btn primary">再来一局</button>
+          <button class="btn ghost">返回大厅改配置</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

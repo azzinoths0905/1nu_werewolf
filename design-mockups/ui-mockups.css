@@ -1,0 +1,252 @@
+:root {
+  --bg-0: #07090f;
+  --bg-1: #0d1424;
+  --panel: #121c30;
+  --panel-2: #17243d;
+  --text: #f5f7ff;
+  --muted: #a7b7db;
+  --primary: #43f4b1;
+  --primary-ink: #04261a;
+  --warn: #ff6f61;
+  --line: #2b3d63;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 0% 0%, #17223b 0%, transparent 45%),
+    radial-gradient(circle at 100% 100%, #122740 0%, transparent 45%),
+    linear-gradient(165deg, var(--bg-0), var(--bg-1));
+}
+
+.board {
+  width: min(1180px, 94vw);
+  margin: 40px auto 80px;
+  display: grid;
+  gap: 24px;
+}
+
+.board-header {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  background: color-mix(in srgb, var(--panel) 88%, black);
+}
+
+.board-header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.board-header p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.screen {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+  background: linear-gradient(170deg, var(--panel), var(--panel-2));
+  box-shadow: 0 18px 40px rgb(0 0 0 / 28%);
+}
+
+.status-pill {
+  display: inline-block;
+  background: rgb(67 244 177 / 18%);
+  color: #73f7c3;
+  border: 1px solid rgb(67 244 177 / 45%);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+h2 {
+  margin: 14px 0 8px;
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+.screen-sub {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: rgb(10 16 30 / 72%);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.input {
+  border: 1px solid #38507f;
+  border-radius: 10px;
+  padding: 12px;
+  color: #d6e3ff;
+  margin-bottom: 12px;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-weight: 700;
+  cursor: default;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #d7e4ff;
+  border: 1px solid #426099;
+}
+
+.full {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.chip-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  font-size: 12px;
+  border: 1px solid #3f5f9d;
+  color: #bad0ff;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.grid.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: #dce7ff;
+}
+
+.player-list {
+  margin: 0;
+  padding-left: 16px;
+  display: grid;
+  gap: 6px;
+  color: #c7d8fc;
+}
+
+.role-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.role-tags span {
+  font-size: 12px;
+  border: 1px solid #4f5f86;
+  border-radius: 8px;
+  padding: 6px 8px;
+  background: #1a2949;
+}
+
+.timer {
+  display: inline-block;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #4e6597;
+  margin-bottom: 10px;
+}
+
+.timer.danger {
+  border-color: rgb(255 111 97 / 50%);
+  color: #ff8f82;
+  background: rgb(255 111 97 / 10%);
+}
+
+.choice-grid,
+.vote-grid,
+.reveal-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.choice-grid {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.choice,
+.vote-card {
+  border: 1px solid #4a6396;
+  border-radius: 10px;
+  color: #dce8ff;
+  background: #1a2a49;
+  text-align: left;
+  padding: 11px 12px;
+}
+
+.vote-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.vote-card.active {
+  border-color: #4ff0b2;
+  background: rgb(67 244 177 / 12%);
+}
+
+.reveal-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reveal-grid div {
+  border: 1px solid #415b91;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 840px) {
+  .grid.two-col,
+  .vote-grid,
+  .reveal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .screen {
+    padding: 18px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+}

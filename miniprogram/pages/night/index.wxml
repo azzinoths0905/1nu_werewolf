@@ -1,0 +1,28 @@
+<view class="view-port">
+  <view class="phone-screen">
+    <view class="tag">夜晚阶段</view>
+    <view class="title">你的身份：{{roleText}}</view>
+    <view class="subtitle">{{instruction}}</view>
+
+    <view class="panel">
+      <view class="timer">夜晚进度 {{submittedCount}} / {{totalCount}}</view>
+      <view class="stack">
+        <button
+          class="choice {{selectedActionIndex === index ? 'choice-active' : ''}}"
+          wx:for="{{actions}}"
+          wx:key="key"
+          wx:for-item="item"
+          wx:for-index="index"
+          data-index="{{index}}"
+          bindtap="chooseAction"
+          disabled="{{hasSubmitted}}"
+        >
+          {{item.label}}
+        </button>
+      </view>
+      <button class="btn btn-primary" bindtap="confirmAction">
+        {{hasSubmitted ? '刷新状态' : '确认行动'}}
+      </button>
+    </view>
+  </view>
+</view>

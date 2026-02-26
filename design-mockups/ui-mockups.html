@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>狼人杀一夜版 - UI 方案预览</title>
+    <link rel="stylesheet" href="./ui-mockups.css" />
+  </head>
+  <body>
+    <main class="board">
+      <header class="board-header">
+        <h1>狼人杀一夜版 UI 方案 A</h1>
+        <p>目标：线下朋友局、快速开玩、中文优先、20 人房间可读性</p>
+      </header>
+
+      <section id="screen-home" class="screen">
+        <div class="status-pill">首页</div>
+        <h2>今晚谁是狼人？</h2>
+        <p class="screen-sub">无需注册，输入昵称即可开始。支持 3-20 人同房间。</p>
+        <div class="panel">
+          <label>你的昵称</label>
+          <div class="input">例如：阿哲</div>
+          <div class="button-row">
+            <button class="btn btn-primary">创建房间</button>
+            <button class="btn btn-ghost">加入房间</button>
+          </div>
+        </div>
+        <div class="chip-row">
+          <span class="chip">中文 UI</span>
+          <span class="chip">手机优先</span>
+          <span class="chip">8-12 分钟一局</span>
+        </div>
+      </section>
+
+      <section id="screen-lobby" class="screen">
+        <div class="status-pill">大厅</div>
+        <h2>房间 #7K9M</h2>
+        <p class="screen-sub">20 人容量 | 任意玩家可调配置并开局</p>
+        <div class="panel">
+          <div class="grid two-col">
+            <div>
+              <h3>玩家 (12/20)</h3>
+              <ul class="player-list">
+                <li>阿哲</li>
+                <li>小泽</li>
+                <li>康康</li>
+                <li>Rina</li>
+                <li>墨鱼</li>
+                <li>...</li>
+              </ul>
+            </div>
+            <div>
+              <h3>角色池</h3>
+              <div class="role-tags">
+                <span>狼人 x3</span><span>预言家 x1</span><span>强盗 x1</span>
+                <span>捣蛋鬼 x1</span><span>村民 x10</span><span>中心牌 x3</span>
+              </div>
+            </div>
+          </div>
+          <div class="button-row">
+            <button class="btn btn-primary">开始本局</button>
+            <button class="btn btn-ghost">复制房间码</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-night" class="screen">
+        <div class="status-pill">夜晚阶段</div>
+        <h2>你的身份：预言家</h2>
+        <p class="screen-sub">请选择 1 名玩家查看身份，或查看 2 张中心牌。</p>
+        <div class="panel">
+          <div class="timer">剩余 00:28</div>
+          <div class="choice-grid">
+            <button class="choice">查看玩家：小泽</button>
+            <button class="choice">查看玩家：康康</button>
+            <button class="choice">查看中心牌 A+B</button>
+          </div>
+          <button class="btn btn-primary full">确认行动</button>
+        </div>
+      </section>
+
+      <section id="screen-vote" class="screen">
+        <div class="status-pill">投票阶段</div>
+        <h2>请投票你认为的狼人</h2>
+        <p class="screen-sub">倒计时结束后自动锁票。你可在锁票前改票。</p>
+        <div class="panel">
+          <div class="timer danger">剩余 00:14</div>
+          <div class="vote-grid">
+            <button class="vote-card active">阿哲</button>
+            <button class="vote-card">小泽</button>
+            <button class="vote-card">康康</button>
+            <button class="vote-card">Rina</button>
+            <button class="vote-card">墨鱼</button>
+            <button class="vote-card">...</button>
+          </div>
+          <button class="btn btn-primary full">提交投票</button>
+        </div>
+      </section>
+
+      <section id="screen-result" class="screen">
+        <div class="status-pill">结算</div>
+        <h2>村民阵营胜利</h2>
+        <p class="screen-sub">最高票：小泽（5 票）| 狼人已被淘汰</p>
+        <div class="panel">
+          <h3>身份揭示</h3>
+          <div class="reveal-grid">
+            <div><strong>阿哲</strong><span>村民</span></div>
+            <div><strong>小泽</strong><span>狼人</span></div>
+            <div><strong>康康</strong><span>强盗</span></div>
+            <div><strong>Rina</strong><span>捣蛋鬼</span></div>
+          </div>
+          <div class="button-row">
+            <button class="btn btn-primary">再来一局</button>
+            <button class="btn btn-ghost">返回大厅改配置</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

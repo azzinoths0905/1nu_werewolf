@@ -1,0 +1,8 @@
+{
+  "description": "本地微信开发者工具私有配置",
+  "projectname": "one-night-werewolf",
+  "miniprogramRoot": "miniprogram/",
+  "setting": {
+    "compileHotReLoad": true
+  }
+}
