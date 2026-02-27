@@ -1,15 +1,28 @@
 <view class="view-port">
   <view class="phone-screen">
-    <view class="tag">投票阶段</view>
+    <view class="header-bar">
+      <view class="tag">投票阶段</view>
+      <view class="phase-badge">公开表决</view>
+    </view>
     <view class="title">请投票你认为的狼人</view>
     <view class="subtitle">{{statusHint}}</view>
 
-    <view class="panel" wx:if="{{privateNightResult}}">
-      <view class="section-title">你的夜晚信息</view>
+    <view class="parchment-panel night-note-panel" wx:if="{{privateNightResult}}">
+      <view class="section-title">你的夜晚线索</view>
       <view class="row-list">{{privateNightResult}}</view>
     </view>
 
-    <view class="panel">
+    <view class="hero-strip">
+      <view>
+        <view class="hero-meta">当前票数提交</view>
+        <view class="hero-strong">{{submittedCount}} / {{totalCount}}</view>
+      </view>
+      <view class="hero-meta">锁票前可改票</view>
+    </view>
+
+    <view class="panel panel-highlight">
+      <view class="section-title">嫌疑人席位</view>
+      <view class="section-subtitle">先选择目标，再按下蜡封提交</view>
       <view class="timer timer-danger">投票进度 {{submittedCount}} / {{totalCount}}</view>
       <view class="grid-2">
         <button
@@ -19,10 +32,12 @@
           data-openid="{{item.openId}}"
           bindtap="chooseVote"
         >
-          {{item.nickname}}
+          <view class="vote-card-index">{{index + 1}}号席</view>
+          <view class="vote-card-name">{{item.nickname}}</view>
+          <view class="vote-card-mark">{{selectedTargetOpenId === item.openId ? '已指认' : '点击指认'}}</view>
         </button>
       </view>
-      <button class="btn btn-primary" bindtap="submitVote">提交投票</button>
+      <button class="btn btn-primary vote-submit-btn" bindtap="submitVote">盖章提交投票</button>
     </view>
   </view>
 </view>

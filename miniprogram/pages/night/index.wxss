@@ -1,1 +1,56 @@
 @import '../../app.wxss';
+
+.role-scroll-card {
+  border-radius: 18rpx;
+  border: 1px solid rgba(200, 162, 102, 0.24);
+  background:
+    radial-gradient(circle at 100% 0, rgba(255, 193, 87, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(61, 45, 28, 0.18), rgba(25, 22, 25, 0.84));
+  padding: 16rpx 18rpx;
+  margin: 6rpx 0 14rpx;
+}
+
+.role-scroll-title {
+  color: #c7b089;
+  font-size: 20rpx;
+}
+
+.role-scroll-name {
+  margin-top: 4rpx;
+  color: #fff0d0;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.role-scroll-desc {
+  margin-top: 6rpx;
+  color: #a8b6d7;
+  font-size: 21rpx;
+  line-height: 1.4;
+}
+
+.choice-title {
+  color: inherit;
+  font-size: 25rpx;
+  line-height: 1.32;
+}
+
+.choice-meta {
+  margin-top: 6rpx;
+  color: #9eadd0;
+  font-size: 18rpx;
+  text-transform: uppercase;
+  letter-spacing: 1rpx;
+}
+
+.choice-active .choice-meta {
+  color: #f0cf93;
+}
+
+.choice[disabled] {
+  opacity: 0.55;
+}
+
+.night-confirm-btn {
+  margin-top: 2rpx;
+}

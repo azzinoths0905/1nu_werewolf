@@ -1,8 +1,28 @@
 <view class="view-port">
   <view class="phone-screen">
-    <view class="tag">首页</view>
-    <view class="title">今晚谁是狼人？</view>
-    <view class="subtitle">输入昵称，3-20 人线下开玩。</view>
+    <view class="header-bar">
+      <view class="tag">首页</view>
+      <view class="phase-badge">线下同场 · 3-20人</view>
+    </view>
+    <view class="home-banner">
+      <view class="home-moon"></view>
+      <view class="home-inn-sign">深夜酒馆 · 推理开场</view>
+      <view class="title">今晚谁是狼人？</view>
+      <view class="subtitle">像摆桌游一样开局。系统自动主持夜晚流程、投票与结算。</view>
+      <view class="pill-row">
+        <view class="pill">房间码开局</view>
+        <view class="pill">任意玩家可开局</view>
+        <view class="pill">一局约 5-10 分钟</view>
+      </view>
+    </view>
+
+    <view class="hero-strip">
+      <view>
+        <view class="hero-meta">玩法模式</view>
+        <view class="hero-strong">酒馆推理 · 一夜版</view>
+      </view>
+      <view class="hero-meta">建议围坐同桌，保持夜晚静默</view>
+    </view>
 
     <view class="panel debug-panel" wx:if="{{showDebugIdentityTools}}">
       <view class="label">开发调试：玩家标识（同账号多端测试）</view>
@@ -21,7 +41,9 @@
       <view class="debug-tip">不同设备设置不同标识后，将被视作不同玩家。</view>
     </view>
 
-    <view class="panel">
+    <view class="panel panel-highlight">
+      <view class="section-title">入场设置</view>
+      <view class="section-subtitle">先填昵称，加入房间时再输入房间码</view>
       <view class="label">昵称</view>
       <input class="input" placeholder="例如：阿哲" maxlength="20" value="{{nickname}}" bindinput="onNicknameInput" />
 
@@ -30,6 +52,11 @@
 
       <button class="btn btn-primary" bindtap="createRoom">创建房间</button>
       <button class="btn btn-ghost" bindtap="joinRoom">加入房间</button>
+    </view>
+
+    <view class="parchment-panel home-footnote">
+      <view class="section-title">桌游提示</view>
+      <view class="row-list">夜晚阶段请将手机压低，避免屏幕内容被旁人看到。</view>
     </view>
   </view>
 </view>

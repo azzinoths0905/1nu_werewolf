@@ -1,10 +1,29 @@
 <view class="view-port">
   <view class="phone-screen">
-    <view class="tag">夜晚阶段</view>
+    <view class="header-bar">
+      <view class="tag">夜晚阶段</view>
+      <view class="phase-badge">保持安静</view>
+    </view>
     <view class="title">你的身份：{{roleText}}</view>
     <view class="subtitle">{{instruction}}</view>
 
-    <view class="panel">
+    <view class="role-scroll-card">
+      <view class="role-scroll-title">身份卷轴</view>
+      <view class="role-scroll-name">{{roleText}}</view>
+      <view class="role-scroll-desc">夜晚行动期间请遮挡屏幕，仅你自己可见。</view>
+    </view>
+
+    <view class="hero-strip">
+      <view>
+        <view class="hero-meta">提交进度</view>
+        <view class="hero-strong">{{submittedCount}} / {{totalCount}}</view>
+      </view>
+      <view class="hero-meta">{{hasSubmitted ? '已提交，等待其他玩家' : '选择并确认你的夜晚行动'}}</view>
+    </view>
+
+    <view class="panel panel-highlight">
+      <view class="section-title">行动卡牌</view>
+      <view class="section-subtitle">点击卡牌选择目标，再盖章确认</view>
       <view class="timer">夜晚进度 {{submittedCount}} / {{totalCount}}</view>
       <view class="stack">
         <button
@@ -17,10 +36,11 @@
           bindtap="chooseAction"
           disabled="{{hasSubmitted}}"
         >
-          {{item.label}}
+          <view class="choice-title">{{item.label}}</view>
+          <view class="choice-meta">{{item.actionType || 'noop'}}</view>
         </button>
       </view>
-      <button class="btn btn-primary" bindtap="confirmAction">
+      <button class="btn btn-primary night-confirm-btn" bindtap="confirmAction">
         {{hasSubmitted ? '刷新状态' : '确认行动'}}
       </button>
     </view>

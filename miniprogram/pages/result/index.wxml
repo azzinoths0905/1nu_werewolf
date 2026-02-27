@@ -1,20 +1,47 @@
 <view class="view-port">
   <view class="phone-screen">
-    <view class="tag">结算</view>
-    <view class="title">{{winnerText}}</view>
-    <view class="subtitle">{{subtitle}}</view>
+    <view class="header-bar">
+      <view class="tag">结算</view>
+      <view class="phase-badge">身份揭晓</view>
+    </view>
+    <view class="result-banner result-banner-{{winnerTheme}}">
+      <view class="result-banner-label">本局裁定</view>
+      <view class="title result-title">{{winnerText}}</view>
+      <view class="subtitle result-subtitle">{{subtitle}}</view>
+      <view class="pill-row">
+        <view class="pill">最高票 {{topVoteValue}} 票</view>
+        <view class="pill">支持同房间再来一局</view>
+      </view>
+    </view>
 
-    <view class="panel">
-      <view class="section-title">身份揭示（初始 -> 最终）</view>
-      <view class="result-item" wx:for="{{results}}" wx:key="openId">
-        <view>
-          <text>{{item.nickname}}</text>
-          <text class="muted-inline">（{{item.initialRoleText}} -> {{item.finalRoleText}}）</text>
+    <view class="hero-strip">
+      <view>
+        <view class="hero-meta">本局状态</view>
+        <view class="hero-strong">已结算</view>
+      </view>
+      <view class="hero-meta">可直接发起下一局</view>
+    </view>
+
+    <view class="panel panel-highlight">
+      <view class="section-title">揭示板（初始身份 -> 最终身份）</view>
+      <view class="section-subtitle">用于复盘夜晚行动与白天票型</view>
+      <view class="result-reveal-list">
+        <view class="result-item reveal-card" wx:for="{{results}}" wx:key="openId">
+          <view class="reveal-card-main">
+            <view class="reveal-name-row">
+              <text class="reveal-name">{{item.nickname}}</text>
+              <text class="reveal-votes">{{item.votesReceived}}票</text>
+            </view>
+            <view class="reveal-role-flow">
+              <text class="reveal-role-tag">初始 {{item.initialRoleText}}</text>
+              <text class="reveal-arrow">→</text>
+              <text class="reveal-role-tag reveal-role-final">最终 {{item.finalRoleText}}</text>
+            </view>
+          </view>
         </view>
-        <text>{{item.votesReceived}}票</text>
       </view>
 
-      <button class="btn btn-primary" bindtap="replay">再来一局</button>
+      <button class="btn btn-primary result-primary-btn" bindtap="replay">再开一局（保留房间）</button>
       <button class="btn btn-ghost" bindtap="backLobby">返回大厅改配置</button>
     </view>
   </view>

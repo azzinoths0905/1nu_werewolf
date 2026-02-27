@@ -1,19 +1,45 @@
 <view class="view-port">
   <view class="phone-screen">
-    <view class="tag">大厅</view>
+    <view class="header-bar">
+      <view class="tag">大厅</view>
+      <view class="phase-badge">准备阶段</view>
+    </view>
     <view class="title">房间 #{{roomCode}}</view>
     <view class="subtitle">当前 {{playerCount}}/20 人 | 任意玩家可开局</view>
 
-    <view class="panel">
-      <view class="section-title">玩家列表</view>
-      <view class="row-list">{{playerText || '暂无玩家'}}</view>
+    <view class="hero-strip">
+      <view>
+        <view class="hero-meta">当前席位</view>
+        <view class="hero-strong">{{playerCount}} / 20</view>
+      </view>
+      <view class="hero-meta">角色牌 {{roleCount}} 张 | 人数不足 3 人不可开始</view>
+    </view>
 
-      <view class="section-title">角色池（本局会按人数自动补齐村民）</view>
-      <view class="chips">
-        <view class="chip" wx:for="{{roles}}" wx:key="*this">{{item}}</view>
+    <view class="panel panel-highlight">
+      <view class="section-title">玩家席位（酒馆桌面）</view>
+      <view class="section-subtitle">围桌就座后，按任意顺序操作即可</view>
+      <view class="seat-grid" wx:if="{{players.length}}">
+        <view class="seat-card" wx:for="{{players}}" wx:key="seatNo">
+          <view class="seat-no">席 {{item.seatNo}}</view>
+          <view class="seat-name">{{item.nickname}}</view>
+          <view class="seat-meta" wx:if="{{item.isBot}}">调试机器人</view>
+        </view>
+      </view>
+      <view class="empty-hint" wx:else>暂无玩家</view>
+
+      <view class="section-title">本局角色牌堆</view>
+      <view class="section-subtitle">系统会按人数自动补齐村民，并额外保留 3 张中心牌</view>
+      <view class="role-deck">
+        <view class="role-card" wx:for="{{roles}}" wx:key="*this">
+          <view class="role-card-title">{{item}}</view>
+          <view class="role-card-mark">角色牌</view>
+        </view>
       </view>
 
-      <view class="subtitle">{{statusHint}}</view>
+      <view class="parchment-panel lobby-status">
+        <view class="section-title">主持提示</view>
+        <view class="row-list">{{statusHint}}</view>
+      </view>
       <view class="debug-bot-row" wx:if="{{showDebugStartTools}}">
         <text class="debug-start-label">开发调试：添加机器人</text>
         <input
@@ -24,7 +50,7 @@
         />
         <button class="btn btn-ghost debug-bot-btn" bindtap="addBots">添加</button>
       </view>
-      <button class="btn btn-primary" bindtap="startGame">开始本局</button>
+      <button class="btn btn-primary start-seal-btn" bindtap="startGame">点亮烛火，开始本局</button>
     </view>
   </view>
 </view>

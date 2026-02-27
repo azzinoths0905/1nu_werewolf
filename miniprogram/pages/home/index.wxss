@@ -1,5 +1,41 @@
 @import '../../app.wxss';
 
+.home-banner {
+  position: relative;
+  border-radius: 18rpx;
+  border: 1px solid rgba(248, 208, 136, 0.22);
+  background:
+    radial-gradient(circle at 86% 18%, rgba(255, 215, 123, 0.1), transparent 26%),
+    radial-gradient(circle at 20% 100%, rgba(111, 72, 34, 0.22), transparent 40%),
+    linear-gradient(180deg, rgba(35, 26, 20, 0.86), rgba(19, 18, 24, 0.9));
+  padding: 18rpx 18rpx 16rpx;
+  margin: 14rpx 0;
+  overflow: hidden;
+}
+
+.home-moon {
+  position: absolute;
+  top: 14rpx;
+  right: 20rpx;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff8d8, #ffcc7d 58%, rgba(255, 204, 125, 0.16) 100%);
+  opacity: 0.92;
+  box-shadow: 0 0 28rpx rgba(255, 203, 112, 0.24);
+}
+
+.home-inn-sign {
+  display: inline-block;
+  margin-bottom: 8rpx;
+  border-radius: 999rpx;
+  border: 1px solid rgba(194, 154, 90, 0.32);
+  background: rgba(63, 45, 28, 0.42);
+  color: #f1d7aa;
+  font-size: 22rpx;
+  padding: 8rpx 14rpx;
+}
+
 .debug-panel {
   margin-bottom: 16rpx;
 }
@@ -19,4 +55,12 @@
   color: #a8b8de;
   font-size: 22rpx;
   line-height: 1.5;
+}
+
+.debug-panel .label {
+  color: #cbbd95;
+}
+
+.home-footnote {
+  margin-top: 14rpx;
 }

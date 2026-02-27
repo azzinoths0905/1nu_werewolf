@@ -1,1 +1,107 @@
 @import '../../app.wxss';
+
+.result-banner {
+  border-radius: 18rpx;
+  border: 1px solid rgba(187, 153, 96, 0.24);
+  padding: 16rpx 18rpx 14rpx;
+  margin: 10rpx 0 14rpx;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(255, 210, 120, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(44, 34, 25, 0.68), rgba(18, 19, 26, 0.9));
+}
+
+.result-banner-village {
+  border-color: rgba(120, 196, 142, 0.24);
+  background:
+    radial-gradient(circle at 88% 10%, rgba(126, 255, 179, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(25, 45, 33, 0.36), rgba(16, 20, 28, 0.92));
+}
+
+.result-banner-wolf {
+  border-color: rgba(215, 115, 95, 0.24);
+  background:
+    radial-gradient(circle at 88% 10%, rgba(255, 117, 92, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(58, 26, 20, 0.4), rgba(18, 18, 24, 0.94));
+}
+
+.result-banner-label {
+  color: #d6bd8f;
+  font-size: 20rpx;
+}
+
+.result-title {
+  margin: 8rpx 0 6rpx;
+  font-size: 46rpx;
+}
+
+.result-subtitle {
+  margin-bottom: 10rpx;
+}
+
+.result-reveal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.reveal-card {
+  padding: 0;
+  border-color: rgba(147, 129, 94, 0.2);
+  background:
+    linear-gradient(180deg, rgba(57, 42, 28, 0.14), rgba(22, 25, 37, 0.72));
+}
+
+.reveal-card-main {
+  width: 100%;
+  padding: 14rpx;
+}
+
+.reveal-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.reveal-name {
+  color: #f8efd9;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.reveal-votes {
+  color: #f2d09b;
+  font-size: 21rpx;
+}
+
+.reveal-role-flow {
+  margin-top: 8rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.reveal-role-tag {
+  border-radius: 999rpx;
+  border: 1px solid rgba(115, 131, 168, 0.24);
+  background: rgba(25, 31, 49, 0.52);
+  color: #d8e2fb;
+  font-size: 20rpx;
+  padding: 6rpx 10rpx;
+}
+
+.reveal-role-final {
+  border-color: rgba(214, 175, 107, 0.28);
+  background: rgba(59, 44, 24, 0.36);
+  color: #f8e5bf;
+}
+
+.reveal-arrow {
+  color: #c5b28e;
+  font-size: 22rpx;
+}
+
+.result-primary-btn {
+  margin-top: 4rpx;
+}

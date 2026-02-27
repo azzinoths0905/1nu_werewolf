@@ -1,26 +1,100 @@
 @import '../../app.wxss';
 
+.seat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rpx;
+}
+
+.seat-card {
+  border-radius: 14rpx;
+  border: 1px solid rgba(148, 127, 92, 0.26);
+  background:
+    linear-gradient(180deg, rgba(64, 48, 31, 0.16), rgba(30, 28, 31, 0.65)),
+    linear-gradient(180deg, rgba(19, 20, 29, 0.92), rgba(14, 16, 23, 0.92));
+  padding: 12rpx;
+  min-height: 100rpx;
+}
+
+.seat-no {
+  color: #f0c778;
+  font-size: 20rpx;
+}
+
+.seat-name {
+  margin-top: 4rpx;
+  color: #f8f1df;
+  font-size: 26rpx;
+  font-weight: 600;
+  line-height: 1.25;
+  word-break: break-all;
+}
+
+.seat-meta {
+  margin-top: 6rpx;
+  color: #9fb0d6;
+  font-size: 19rpx;
+}
+
+.role-deck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.role-card {
+  width: calc(33.333% - 8rpx);
+  min-width: 150rpx;
+  border-radius: 12rpx;
+  border: 1px solid rgba(204, 168, 101, 0.24);
+  background:
+    radial-gradient(circle at 0 0, rgba(255, 183, 75, 0.08), transparent 46%),
+    linear-gradient(180deg, rgba(53, 39, 25, 0.72), rgba(24, 22, 24, 0.9));
+  padding: 10rpx 12rpx;
+}
+
+.role-card-title {
+  color: #f5e4c2;
+  font-size: 22rpx;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.role-card-mark {
+  margin-top: 4rpx;
+  color: #a9956f;
+  font-size: 18rpx;
+}
+
+.lobby-status {
+  margin-top: 2rpx;
+}
+
+.start-seal-btn {
+  margin-top: 2rpx;
+}
+
 .debug-start-label {
-  color: #c8d8ff;
-  font-size: 24rpx;
+  color: #d9c39a;
+  font-size: 22rpx;
 }
 
 .debug-bot-row {
   display: flex;
   align-items: center;
   gap: 12rpx;
-  border: 1px solid #314a78;
+  border: 1px solid rgba(122, 104, 82, 0.26);
   border-radius: 12rpx;
-  background: rgba(7, 12, 24, 0.45);
+  background: rgba(41, 31, 23, 0.22);
   padding: 12rpx 14rpx;
 }
 
 .debug-bot-input {
   width: 100rpx;
-  border: 1px solid #46639c;
+  border: 1px solid rgba(122, 141, 186, 0.34);
   border-radius: 10rpx;
-  background: #1a2b4b;
-  color: #dce8ff;
+  background: rgba(21, 26, 41, 0.92);
+  color: #e7eeff;
   padding: 10rpx 12rpx;
   font-size: 24rpx;
   text-align: center;
