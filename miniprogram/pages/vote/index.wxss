@@ -1,1 +1,42 @@
 @import '../../app.wxss';
+
+.night-note-panel {
+  margin-bottom: 14rpx;
+}
+
+.vote {
+  min-height: 132rpx;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 6rpx;
+  text-align: left;
+  padding: 14rpx;
+}
+
+.vote-card-index {
+  color: #c9af7d;
+  font-size: 18rpx;
+}
+
+.vote-card-name {
+  color: #f8efd9;
+  font-size: 26rpx;
+  font-weight: 700;
+  line-height: 1.2;
+  word-break: break-all;
+}
+
+.vote-card-mark {
+  margin-top: auto;
+  color: #9aabd0;
+  font-size: 18rpx;
+}
+
+.vote-active .vote-card-mark {
+  color: #f3d39b;
+}
+
+.vote-submit-btn {
+  margin-top: 2rpx;
+}

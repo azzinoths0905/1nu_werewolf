@@ -10,6 +10,8 @@ Page({
     winnerText: '结算中...',
     subtitle: '正在同步结算结果',
     results: [],
+    winnerTheme: 'pending',
+    topVoteValue: 0,
   },
 
   onShow() {
@@ -78,11 +80,19 @@ Page({
       }
 
       const result = game.result || {};
+      const rows = result.rows || [];
+      const topVoteValue = rows.reduce((max, row) => {
+        const votes = Number(row.votesReceived) || 0;
+        return votes > max ? votes : max;
+      }, 0);
+      const winnerText = result.winnerText || '结算中...';
       this.setData({
         gameId: game.gameId || '',
-        winnerText: result.winnerText || '结算中...',
+        winnerText,
         subtitle: result.subtitle || '正在同步结算结果',
-        results: result.rows || [],
+        results: rows,
+        topVoteValue,
+        winnerTheme: winnerText.includes('村民') ? 'village' : winnerText.includes('狼人') ? 'wolf' : 'pending',
       });
     } catch {
       wx.showToast({ title: '结算拉取失败', icon: 'none' });
